@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--
+  HOW TO EDIT THIS PAGE
+  Open this file in Notepad or VS Code. Only change the text between tags; leave the <...> parts alone.
+  Search (Ctrl+F) for these markers to find each part:
+    "HEADER"      name, title, fields and links
+    "ABOUT"       the two bio paragraphs
+    "RESEARCH"    publications and work in progress (copy one <div class="paper"> block to add a paper)
+    "TEACHING"    courses
+    "EDUCATION"   degrees
+    "AWARDS"      fellowships, scholarships and prizes
+  Files that live next to this one: photo.jpg (your headshot) and cv.pdf (your CV).
+  Save, then double-click index.html to check it in your browser.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toheeb Aminu | Economics, Northern Illinois University</title>
+  <meta name="description" content="Toheeb Aminu is a PhD student in Economics at Northern Illinois University working on development economics, financial economics and applied econometrics.">
+  <meta property="og:title" content="Toheeb Aminu">
+  <meta property="og:description" content="PhD student in Economics, Northern Illinois University. Development economics, financial economics, applied econometrics.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1f2328;
+      --muted: #5b6168;
+      --accent: #8c1d18;      /* deep red, a quiet nod to NIU */
+      --rule: #e3e1dc;
+      --bg: #fdfcfa;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top bar */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+    }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+    nav .home { color: var(--text); font-weight: 600; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+    nav ul a { color: var(--muted); }
+    nav ul a:hover { color: var(--accent); }
+
+    /* Header block */
+    header { padding: 48px 0 8px; }
+    .intro { display: flex; gap: 32px; align-items: flex-start; }
+    .photo {
+      flex: 0 0 160px; width: 160px; height: 200px;
+      border-radius: 4px; overflow: hidden;
+      background: #ece9e3; color: var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Source Sans 3", sans-serif; font-size: 40px; letter-spacing: 2px;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    h1 { font-size: 36px; line-height: 1.15; margin: 0 0 6px; font-weight: 600; }
+    .role { margin: 0; font-size: 19px; }
+    .fields { margin: 10px 0 0; color: var(--muted); font-size: 16.5px; font-family: "Source Sans 3", sans-serif; }
+    .links {
+      margin: 16px 0 0; padding: 0; list-style: none;
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      font-family: "Source Sans 3", sans-serif; font-size: 16px;
+    }
+    .links a { font-weight: 600; }
+
+    .bio { margin-top: 28px; }
+    .bio p { margin: 0 0 14px; }
+
+    /* Sections */
+    section { padding: 20px 0 8px; }
+    h2 {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+      border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin: 24px 0 18px;
+    }
+    h3 {
+      font-family: "Source Sans 3", sans-serif; font-size: 16px; font-weight: 600;
+      margin: 26px 0 10px; color: var(--text);
+    }
+
+    .paper { margin: 0 0 24px; }
+    .paper .title { font-weight: 600; font-size: 18.5px; }
+    .paper .title a { color: var(--text); }
+    .paper .title a:hover { color: var(--accent); }
+    .paper .meta { color: var(--muted); font-size: 16.5px; margin-top: 2px; }
+    .paper .meta em { color: var(--text); }
+    .paper .actions {
+      margin-top: 4px; font-family: "Source Sans 3", sans-serif; font-size: 15px;
+      display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline;
+    }
+    details summary {
+      cursor: pointer; color: var(--accent); font-weight: 600; list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: "+ "; }
+    details[open] summary::before { content: "\2212\00a0"; }
+    details .abstract {
+      font-family: "Source Serif 4", Georgia, serif; font-size: 16.5px;
+      color: var(--text); margin: 8px 0 0; padding-left: 14px;
+      border-left: 2px solid var(--rule);
+    }
+    .note { color: var(--muted); font-size: 16.5px; margin: 6px 0 0; }
+
+    /* Simple lists */
+    .entries { list-style: none; margin: 0; padding: 0; }
+    .entries li { display: flex; gap: 18px; margin: 0 0 14px; }
+    .entries .when {
+      flex: 0 0 120px; color: var(--muted);
+      font-family: "Source Sans 3", sans-serif; font-size: 15.5px; padding-top: 2px;
+    }
+    .entries .what { flex: 1; }
+    .entries .sub { color: var(--muted); font-size: 16.5px; }
+
+    footer {
+      margin-top: 40px; border-top: 1px solid var(--rule);
+      padding: 20px 0 40px; color: var(--muted);
+      font-family: "Source Sans 3", sans-serif; font-size: 14.5px;
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 17px; }
+      nav ul { gap: 14px; }
+      header { padding-top: 32px; }
+      .intro { flex-direction: column; gap: 20px; }
+      .photo { width: 130px; height: 162px; flex-basis: auto; }
+      h1 { font-size: 30px; }
+      .entries li { flex-direction: column; gap: 0; }
+      .entries .when { flex-basis: auto; }
+    }
+    @media print {
+      nav, details summary::before { display: none; }
+      details .abstract { display: block; }
+      a { color: var(--text); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="home" href="#top">Toheeb Aminu</a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="cv.pdf">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <!-- HEADER -->
+  <header>
+    <div class="intro">
+      <!-- Save your headshot as photo.jpg in this folder and it appears here automatically. -->
+      <div class="photo">
+        <img src="photo.jpg" alt="Toheeb Aminu" onerror="this.parentNode.textContent='TA';">
+      </div>
+      <div>
+        <h1>Toheeb Adekola Aminu</h1>
+        <p class="role">PhD Student in Economics<br><a href="https://www.niu.edu/econ/">Northern Illinois University</a></p>
+        <p class="fields">Health Economics &middot; Public Economics &middot; Development Economics</p>
+        <ul class="links">
+          <li><a href="mailto:aminu.toheeb.23@gmail.com">Email</a></li>
+          <li><a href="cv.pdf">CV</a></li>
+          <li><a href="https://scholar.google.com/citations?user=J9oKD7kAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a href="https://github.com/ToheebAminu">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/toheeb-aminu-50a177125/">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="bio">
+      <p>I am a PhD student in Economics at Northern Illinois University. My research is in health, public and development economics. I study how laws and public programmes in Nigeria, from free maternal and child health care to legislation on violence against women, shape health, behaviour and beliefs. My work uses household survey microdata and recent difference-in-differences methods.</p>
+      <p>Before the PhD, I completed the Erasmus Mundus Joint Master's in Economics of Globalisation and European Integration at the Universities of Bari, Ghent and Tartu, was a research intern at <a href="https://cris.unu.edu/toheeb-aminu">UNU-CRIS</a> in Bruges, and spent three years in audit at KPMG Nigeria. I received my BSc in Economics from the University of Ilorin.</p>
+    </div>
+  </header>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <h2>Research</h2>
+
+    <!--
+    JOB MARKET PAPER: when you have one, uncomment this block and move it to the top of Research.
+
+    <h3>Job Market Paper</h3>
+    <div class="paper">
+      <div class="title"><a href="papers/aminu_jmp.pdf">Paper title</a></div>
+      <div class="meta">Draft, Month Year</div>
+      <p class="abstract-open">One-paragraph abstract shown in full, not hidden.</p>
+      <div class="actions"><a href="papers/aminu_jmp.pdf">PDF</a></div>
+    </div>
+    -->
+
+    <h3>Publications</h3>
+
+    <div class="paper">
+      <div class="title"><a href="https://www.ajol.info/index.php/ijep/article/view/284785">Investigating the Role of Institutions in the FDI&ndash;Ecological Footprint Linkage in Sub-Saharan Africa: Is There a Threshold for Institutional Quality?</a></div>
+      <div class="meta">with Kolawole A. Moshood &middot; <em>Ilorin Journal of Economic Policy</em>, 11(2), 1&ndash;18, 2024</div>
+      <div class="actions">
+        <a href="https://www.ajol.info/index.php/ijep/article/view/284785">Journal</a>
+        <details>
+          <summary>Abstract</summary>
+          <p class="abstract">We study whether the quality of institutions conditions the effect of foreign direct investment on the environment in 40 Sub-Saharan African countries. Using system GMM, we estimate the institutional quality thresholds above which FDI starts to support environmental sustainability, and we examine the non-linear relationship between economic growth and the ecological footprint.</p>
+        </details>
+      </div>
+    </div>
+
+    <h3>Work in Progress</h3>
+
+    <div class="paper">
+      <div class="title">Formal Law, Local Legal Institutions, and Gendered Beliefs: Evidence from Nigeria</div>
+      <div class="meta">with <a href="https://sites.google.com/view/sodiqoladipupo">Sodiq Oladipupo</a></div>
+      <p class="note">Studies how the staggered state adoption of the Violence Against Persons (Prohibition) Act changed beliefs about domestic violence, and whether the effect differs in the twelve states with Sharia penal codes. Uses four waves of the Nigeria DHS (2008&ndash;2024).</p>
+    </div>
+
+    <!-- Hidden for now. Remove the comment markers to show it again (and replace the placeholder title).
+    <div class="paper">
+      <div class="title">State Adoption of Free Maternal and Child Health Policies in Nigeria</div>
+      <p class="note">Studies the staggered state-level adoption of Free Maternal and Child Health (FMCH) programmes in Nigeria.</p>
+    </div>
+    -->
+
+    <!-- Hidden for now because it sits outside your listed fields. Remove the comment markers to show it again.
+    <div class="paper">
+      <div class="title">Do Factor Premia Depend on Market Regimes?</div>
+      <p class="note">Tests whether Fama&ndash;French factor premia differ across U.S. market regimes defined by realized volatility, the VIX, economic policy uncertainty and the federal funds rate.</p>
+    </div>
+    -->
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p class="note" style="margin-bottom:14px;">Teaching Assistant, Northern Illinois University, 2024&ndash;present</p>
+    <ul class="entries">
+      <li><span class="when">ECON 660</span><span class="what">Microeconomic Analysis (first-year graduate core) <span class="sub">&middot; led recitation sections</span></span></li>
+      <li><span class="when">ECON 591</span><span class="what">Mathematical Methods for Economics (first-year graduate core) <span class="sub">&middot; led recitation sections</span></span></li>
+      <li><span class="when">ECON 260</span><span class="what">Principles of Microeconomics</span></li>
+    </ul>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="background">
+    <h2>Education</h2>
+    <ul class="entries">
+      <li><span class="when">2024&ndash;present</span><span class="what">PhD, Economics<br><span class="sub">Northern Illinois University</span></span></li>
+      <li><span class="when">2022&ndash;2024</span><span class="what">Erasmus Mundus Joint Master's, Economics of Globalisation and European Integration<br><span class="sub">Universities of Bari, Ghent and Tartu &middot; Distinction (108/110)</span></span></li>
+      <li><span class="when">2014&ndash;2018</span><span class="what">BSc, Economics<br><span class="sub">University of Ilorin &middot; First Class Honours, joint top two in class</span></span></li>
+    </ul>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <h2>Fellowships and Awards</h2>
+    <ul class="entries">
+      <li><span class="when">2024&ndash;present</span><span class="what">Graduate Assistantship<br><span class="sub">Department of Economics, Northern Illinois University</span></span></li>
+      <li><span class="when">2022&ndash;2024</span><span class="what">Erasmus Mundus Joint Master's Scholarship<br><span class="sub">European Union (EACEA)</span></span></li>
+      <li><span class="when">2015&ndash;2018</span><span class="what">University Scholar, for the highest CGPA after the first year<br><span class="sub">University of Ilorin</span></span></li>
+      <li><span class="when">2017&ndash;2018</span><span class="what">National Merit Scholarship<br><span class="sub">Total Nigeria and Nigerian National Petroleum Corporation (NNPC)</span></span></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Toheeb Aminu &middot; Department of Economics, Northern Illinois University, DeKalb, IL &middot; Last updated October 2026
+  </div>
+</footer>
+
+</body>
+</html>
